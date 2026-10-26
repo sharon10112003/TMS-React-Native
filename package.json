@@ -1,9 +1,17 @@
 {
   "name": "ticket-management-mobile",
-  "main": "expo-router/entry",
+  "main": "expo/AppEntry.js",
   "version": "1.0.0",
   "dependencies": {
     "@expo/ui": "~57.0.22",
+    "@expo/vector-icons": "^15.1.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-picker/picker": "2.11.4",
+    "@react-navigation/drawer": "^7.14.4",
+    "@react-navigation/native": "^7.5.0",
+    "@react-navigation/stack": "^7.12.0",
+    "axios": "^1.20.0",
+    "cross-env": "^10.1.0",
     "expo": "~57.0.27",
     "expo-constants": "~57.0.21",
     "expo-device": "~57.0.2",
@@ -11,7 +19,6 @@
     "expo-glass-effect": "~57.0.4",
     "expo-image": "~57.0.5",
     "expo-linking": "~57.0.12",
-    "expo-router": "~57.0.25",
     "expo-splash-screen": "~57.0.9",
     "expo-status-bar": "~57.0.1",
     "expo-symbols": "~57.0.3",
@@ -32,11 +39,12 @@
     "typescript": "~6.0.3"
   },
   "scripts": {
-    "start": "expo start",
+    "start": "cross-env EXPO_ROUTER_DISABLE_RN_NAVIGATION_CHECK=1 expo start",
+    "dev": "cross-env EXPO_ROUTER_DISABLE_RN_NAVIGATION_CHECK=1 expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "android": "cross-env EXPO_ROUTER_DISABLE_RN_NAVIGATION_CHECK=1 expo start --android",
+    "ios": "cross-env EXPO_ROUTER_DISABLE_RN_NAVIGATION_CHECK=1 expo start --ios",
+    "web": "cross-env EXPO_ROUTER_DISABLE_RN_NAVIGATION_CHECK=1 expo start --web",
     "lint": "expo lint"
   },
   "private": true
